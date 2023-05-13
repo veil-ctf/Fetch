@@ -3,6 +3,10 @@ A simple linux system information tool in C++
 
 Use --clean for a cleaner look
 
+## Examples
+
+`fetch --clean --save info.txt`
+
 ## Compiling
 
 1: `git clone https://github.com/veil-ctf/Fetch.git`

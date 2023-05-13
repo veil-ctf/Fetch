@@ -9,17 +9,25 @@ int main(int argc, char **argv) {
     if (argc > 1) {
         for (int i = 1; i < argc; i++) {
             if (strcmp(argv[i], "--help") == 0) {
-                std::cout << argv[0] << " [OPTIONS].."
+                std::cout << argv[0] << " [OPTIONS]..\n"
                 << std::endl << "--help\tShows this page"
                 << std::endl << "--clean\tClears the screen"
-                << std::endl << "--save\tSaves the info in info.txt";
+                << std::endl << "--save [FILE]\tSaves info in custom file"
+                << std::endl << "\nExamples:\n" << argv[0] << " --clean\n"
+                << argv[0] << " --save info.txt\n";
                 exit(0);
             }
             if (strcmp(argv[i], "--clean") == 0) {
                 system("clear");
             }
             if (strcmp(argv[i], "--save") == 0) {
-                std::ofstream outputFile("info.txt");
+                std::string fileName;
+                if (argv[i] + 1) {
+                    fileName = argv[i + 1];
+                } else {
+                    fileName = "info.txt";
+                }
+                std::ofstream outputFile(fileName);
                 if (outputFile.is_open()) {
                     outputFile << "Hostname: " << f.getHostname();
                     outputFile << "\nOS: " << f.getOs();
