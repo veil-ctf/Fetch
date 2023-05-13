@@ -8,11 +8,18 @@ int main(int argc, char **argv) {
     Fetch f;
     if (argc > 1) {
         for (int i = 1; i < argc; i++) {
+            if (strcmp(argv[i], "--help") == 0) {
+                std::cout << argv[0] << " [OPTIONS].."
+                << std::endl << "--help\tShows this page"
+                << std::endl << "--clean\tClears the screen"
+                << std::endl << "--save\tSaves the info in info.txt";
+                exit(0);
+            }
             if (strcmp(argv[i], "--clean") == 0) {
                 system("clear");
             }
             if (strcmp(argv[i], "--save") == 0) {
-                std::ofstream outputFile("output.txt");
+                std::ofstream outputFile("info.txt");
                 if (outputFile.is_open()) {
                     outputFile << "Hostname: " << f.getHostname();
                     outputFile << "\nOS: " << f.getOs();
