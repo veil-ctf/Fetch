@@ -1,14 +1,34 @@
 #include <iostream>
 #include "fetch.hpp"
 #include <cstring>
+#include <string>
+#include <fstream>
 
 int main(int argc, char **argv) {
+    Fetch f;
     if (argc > 1) {
-        if (strcmp(argv[1], "--clean") == 0) {
-            system("clear");
+        for (int i = 1; i < argc; i++) {
+            if (strcmp(argv[i], "--clean") == 0) {
+                system("clear");
+            }
+            if (strcmp(argv[i], "--save") == 0) {
+                std::ofstream outputFile("output.txt");
+                if (outputFile.is_open()) {
+                    outputFile << "Hostname: " << f.getHostname();
+                    outputFile << "\nOS: " << f.getOs();
+                    outputFile << "\nShell: " << f.getShell();
+                    outputFile << "\nUptime: " << f.getUptime();
+                    outputFile << "Ram Usage: " << f.getRamUsage();
+                    outputFile << "\nKernel: " << f.getKernelInfo();
+                    outputFile << "\nTerminal Emulator:" << f.getTerminal();
+                    outputFile << "\nDE: " << f.getDE();
+                    outputFile.close();
+                } else {
+                    std::cout << "Failed to open output file.";
+                }
+            }
         }
     }
-    Fetch f;
 
     std::cout << "\033[35m" << R"(                       
         ╔═╗┌─┐┌┬┐┌─┐┬ ┬
@@ -24,4 +44,6 @@ int main(int argc, char **argv) {
     std::cout << "\033[1;36m\n\tDE: \033[0m" << f.getDE();
     std::cout << "\033[1;36m\n\tHostname: \033[0m" << f.getHostname();
     std::cout << "\033[1;36m\n\n";
+
+    return 0;
 };

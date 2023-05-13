@@ -44,7 +44,7 @@ std::string Fetch::getUptime() {
 
     FILE *pipe = popen("uptime -p", "r");
     if (!pipe) {
-        return "Error occured in getUptime()\n";   
+        return "Error: getUptime()\n";   
     }
 
     while (fgets(buffer.data(), buffer.size(), pipe) != nullptr) {
@@ -104,7 +104,7 @@ std::string Fetch::getDE() {
         if (session != nullptr) {
             return currentDE;
         } else {
-            return "Error getDE()";
+            return "Error: getDE()";
         }
     }
 }
