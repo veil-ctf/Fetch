@@ -1,5 +1,5 @@
 # Fetch
-A simple system information fetcher in C++
+A simple system information tool in C++
 
 ## Compiling
 
