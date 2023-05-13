@@ -7,10 +7,12 @@ Use --clean for a cleaner look
 
 1: `git clone https://github.com/veil-ctf/Fetch.git`
 
-2: `cd Fetch/build`
+2: `cd Fetch`
 
-3: `cmake ..`
+3: `mkdir build && cd build`
 
-4: `make`
+4: `cmake ..`
 
-5: `./fetch`
+5: `make`
+
+6: `./fetch`

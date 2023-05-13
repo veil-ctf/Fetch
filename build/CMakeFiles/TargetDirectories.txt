@@ -1,0 +1,3 @@
+/home/dev/Fetch/build/CMakeFiles/fetch.dir
+/home/dev/Fetch/build/CMakeFiles/edit_cache.dir
+/home/dev/Fetch/build/CMakeFiles/rebuild_cache.dir

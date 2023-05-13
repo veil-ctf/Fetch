@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/fetch.dir/src/main.cpp.o CMakeFiles/fetch.dir/src/fetch.cpp.o -o fetch 
