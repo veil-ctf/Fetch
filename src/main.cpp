@@ -39,10 +39,12 @@ int main(int argc, char **argv) {
                     outputFile << "\nDE: " << f.getDE();
                     outputFile.close();
                 } else {
-                    std::cout << "Failed to open output file.";
+                    std::cout << "Failed to write to output file.";
                 }
             }
         }
+    } else {
+        exit(0);
     }
 
     std::cout << "\033[35m" << R"(                       
