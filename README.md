@@ -1,5 +1,5 @@
 # Fetch
-A simple system information tool in C++
+A simple linux system information tool in C++
 
 Use --clean for a cleaner look
 
