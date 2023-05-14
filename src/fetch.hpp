@@ -1,3 +1,5 @@
+#include <iostream>
+
 #ifndef FETCH_H
 #define FETCH_H
 
@@ -11,6 +13,7 @@ class Fetch {
         std::string getTerminal();
         std::string getDE();
         std::string getHostname();
+        std::string getUser();
 };
 
 #endif
