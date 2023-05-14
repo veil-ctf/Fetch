@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cstring>
 #include "fetch.hpp"
+#include <ctime>
 
 std::string Fetch::getOs() {
     std::ifstream osRelease("/etc/os-release");
@@ -161,4 +162,11 @@ std::string Fetch::getUser() {
             return userName;
         }
     }
+}
+
+std::string Fetch::getTime() {
+    std::time_t currentTime = std::time(nullptr);
+    std::string timeString = std::ctime(&currentTime);
+
+    return timeString;
 }

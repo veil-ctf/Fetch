@@ -14,6 +14,7 @@ class Fetch {
         std::string getDE();
         std::string getHostname();
         std::string getUser();
+        std::string getTime();
 };
 
 #endif

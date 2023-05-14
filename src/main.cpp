@@ -46,12 +46,14 @@ int main(int argc, char **argv) {
             }
         }
     }
-
-    std::cout << "\033[35m" << R"(                       
-        ╔═╗┌─┐┌┬┐┌─┐┬ ┬
-        ╠╣ ├┤  │ │  ├─┤
-        ╚  └─┘ ┴ └─┘┴ ┴
-    )" << "\033[0m" << std::endl;
+    std::cout << "\t\033[35m╔═╗┌─┐┌┬┐┌─┐┬ ┬\033[0m" << "        Time: \033[32m" << f.getTime();
+    std::cout << "\t\033[35m╠╣ ├┤  │ │  ├─┤\033[0m" << "        User: \033[32m" << f.getUser();
+    std::cout << "\t\033[35m╚  └─┘ ┴ └─┘┴ ┴\033[0m\n\n";
+    // std::cout << "\033[35m" << R"(
+    //     ╔═╗┌─┐┌┬┐┌─┐┬ ┬
+    //     ╠╣ ├┤  │ │  ├─┤
+    //     ╚  └─┘ ┴ └─┘┴ ┴
+    // )" << "\033[0m" << std::endl;
     std::cout << "\033[1;36m\tHostname: \033[0m" << f.getHostname();
     std::cout << "\033[1;36m\n\tCurrent user: \033[0m" << f.getUser();
     std::cout << "\033[1;36m\tOS: \033[0m" << f.getOs();
