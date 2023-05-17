@@ -7,7 +7,7 @@
 #include <sys/utsname.h>
 #include <algorithm>
 #include <cstring>
-#include "fetch.hpp"
+#include "../include/fetch.hpp"
 #include <ctime>
 
 std::string Fetch::getOs() {
@@ -119,7 +119,7 @@ std::string Fetch::getDE() {
     } else {
         const char* session = std::getenv("XDG_CURRENT_DESKTOP");
         if (session != nullptr) {
-            return std::string(currentDE);
+            return std::string(session);
         } else {
             return "Error: getDE()";
         }
